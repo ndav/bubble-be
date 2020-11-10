@@ -6,7 +6,7 @@ I stuggled a little to work out an enhancement to demonstrate my skills but i se
 
 This is intended as a scheduled task and will only operate on bookings in the past (to prevent duplication)
 
-Swagger [src/config/swagger.yaml]
+(Swagger Definition)[src/config/swagger.yaml]
 
 # Enhancements - Time Permitting
 
