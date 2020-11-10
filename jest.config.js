@@ -1,0 +1,38 @@
+module.exports = {
+  automock: false,
+  browser: false,
+  bail: false,
+  collectCoverageFrom: [
+    'src/**/*.{js,ts}',
+    '!**/node_modules/**',
+    '!**/src/db/index.ts',
+    '!**/src/db/DbManager.ts',
+    '!**/src/db/migrations/*',
+    '!**/src/server.ts',
+    '!**/src/config/index.ts',
+    '!**/src/config/db/readConnection.ts',
+    '!**/src/config/db/writeConnection.ts',
+  ],
+  coverageDirectory: '<rootDir>/testCoverage',
+  globals: {
+    __DEV__: true,
+  },
+  moduleFileExtensions: ['ts', 'js', 'json', 'jsx', 'node'],
+  preset: 'ts-jest',
+  roots: ['<rootDir>/src'],
+  setupFiles: ['<rootDir>/jest/setupTests.js'],
+  testEnvironment: 'node',
+  testMatch: ['**/?(*.)+(spec|test).ts?(x)'],
+  verbose: true,
+  collectCoverage: true,
+  coverageDirectory: 'coverage',
+  coverageReporters: ['text', 'json', 'json-summary', 'lcov', 'clover'],
+  coverageThreshold: {
+    global: {
+      branches: 90,
+      functions: 95,
+      lines: 95,
+      statements: 95,
+    },
+  },
+}

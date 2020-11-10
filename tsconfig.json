@@ -1,0 +1,44 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "src",
+    "module": "commonjs",
+    "target": "es2018",
+    "lib": ["es2018", "dom"],
+    "preserveConstEnums": true,
+    "suppressExcessPropertyErrors": false,
+    "removeComments": true,
+    "stripInternal": true,
+    "declaration": false,
+    "outDir": "./dist/src",
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "noImplicitThis": true,
+    "noUnusedParameters": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": false,
+    "checkJs": false,
+    "strictPropertyInitialization": false /* Compatibility option for TypeORM */,
+    "emitDecoratorMetadata": true /* TypeORM */,
+    "experimentalDecorators": true /* TypeORM */,
+    "plugins": [
+      {
+        "transform": "ts-auto-mock/transformer",
+        "cacheBetweenTests": false
+      }
+    ],
+    "paths": {
+      "@controllers/*": ["controllers/*"],
+      "@domain/*": ["domain/*"],
+      "@middleware/*": ["middleware/*"],
+      "@services/*": ["services/*"]
+    },
+    "typeRoots": ["./src/@types", "node_modules/@types"]
+  },
+  "exclude": ["dist", "node_modules", "plugins", "res", "tmp", "hooks", "jest"]
+}

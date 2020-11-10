@@ -1,0 +1,86 @@
+openapi: 3.0.0
+info:
+  description: Insights Service API
+  version: '1.0.0'
+  title: Insights Service API
+  contact:
+    email: nickdavies@gmail.com
+tags:
+  - name: Private
+    description: Private system to system calls
+  - name: Public
+    description: Operations available to regular developers
+  - name: Healthcheck
+    description: Operations to test the health of the service
+paths:
+  /:
+    get:
+      tags:
+        - Healthcheck
+      summary: Root endpoint for completeness.
+      operationId: Root
+      responses:
+        '200':
+          description: Request was successful
+      deprecated: false
+  /healthcheck/ping:
+    get:
+      tags:
+        - Healthcheck
+      summary: Test the reachability of the microservice.
+      operationId: Ping
+      responses:
+        '200':
+          description: Request was successful
+      deprecated: false
+  /healthcheck/ready:
+    get:
+      tags:
+        - Healthcheck
+      summary: Test the reachability of the microservice.
+      operationId: Ready
+      responses:
+        '200':
+          description: Request was successful
+      deprecated: false
+  /insight:
+    get:
+      tags:
+        - Public
+      summary: Return a list of current insights (booking aggregation)
+      operationId: getInsights
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/InsightResponse'
+  /event/injest-bookings:
+    get:
+      tags:
+        - Private
+      summary: Performs an injest on the external APIs
+      operationId: injestBookings
+      responses:
+        '200':
+          description: OK
+
+components:
+  schemas:
+    InsightResponse:
+      type: object
+      properties:
+        month:
+          type: string
+          description: Year/Month for the aggregate
+          example: '202011'
+        duration:
+          type: number
+          description: Aggregate of the duration use of the service in the current month
+          example: 12.4
+servers:
+  - description: Local Development
+    url: /
