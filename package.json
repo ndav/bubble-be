@@ -35,7 +35,8 @@
     "supertest": "^5.0.0",
     "swagger-express-middleware": "^4.0.2",
     "typeorm": "^0.2.28",
-    "typescript-tslint-plugin": "^0.5.5"
+    "typescript-tslint-plugin": "^0.5.5",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
