@@ -14,6 +14,17 @@ This is intended as a scheduled task and will only operate on bookings in the pa
 - Perform aggregations in the db where they belong
 - The service is fully dockerised but i would a build scripts for adding to the registry and deployment
 
+# Running
+
+In order to run the service you will need to execute the following commands. You will also need an instance of postgres running somewhere with the relevent credentials.
+
+```
+> cp .env.default .env
+> npm install
+> npm run build
+> npm run start
+```
+
 # Service Dependencies
 
 # External Dependencies
